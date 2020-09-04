@@ -7,5 +7,11 @@ pipeline {
       }
     }
 
+    stage('CopyArtifacts') {
+      steps {
+        archiveArtifacts 'target/**/*.war'
+      }
+    }
+
   }
 }
