@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('Build') {
       post {
-        always {
-          echo 'I will always say Hello again!'
+        success {
+          archiveArtifacts(artifacts: 'target/**/*.war', followSymlinks: false)
         }
 
       }
