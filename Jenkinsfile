@@ -24,9 +24,9 @@ pipeline {
           script {
             scannerHome =  tool type: 'hudson.plugins.sonar.SonarRunnerInstallation', name: 'SonarScanner-PermNode'
             echo "${scannerHome}"
-            sh "${scannerHome}/bin/sonar-scanner"
           }
 
+          sh "${scannerHome}/bin/sonar-scanner"
         }
 
       }
