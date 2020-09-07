@@ -32,5 +32,14 @@ pipeline {
       }
     }
 
+    stage('Wait for Quality Gate') {
+      steps {
+        timeout(unit: 'MINUTES', time: 5, activity: true) {
+          waitForQualityGate(webhookSecretId: 'f76cad53-7e51-4403-b70f-3c3446d23a7b', abortPipeline: true)
+        }
+
+      }
+    }
+
   }
 }
