@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    node {
+      label 'plain && maven'
+    }
+
+  }
   stages {
     stage('Build') {
       post {
