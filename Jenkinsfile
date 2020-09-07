@@ -1,7 +1,7 @@
 pipeline {
   agent {
     node {
-      label 'plain && maven'
+      label 'plain,maven'
     }
 
   }
