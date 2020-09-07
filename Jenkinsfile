@@ -20,7 +20,7 @@ pipeline {
 
     stage('Sonar Analysis') {
       steps {
-        withSonarQubeEnv(installationName: 'OnHost-SonarQubeServer', credentialsId: 'f76cad53-7e51-4403-b70f-3c3446d23a7b', envOnly: true) {
+        withSonarQubeEnv(installationName: 'OnHost-SonarQubeServer', credentialsId: 'f76cad53-7e51-4403-b70f-3c3446d23a7b') {
           script {
             scannerHome =  tool type: 'hudson.plugins.sonar.SonarRunnerInstallation', name: 'SonarScanner-PermNode'
             echo "${scannerHome}"
